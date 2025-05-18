@@ -1,0 +1,147 @@
+/* 1. Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* 2. Root variables */
+:root {
+  --font-family: 'Poppins', sans-serif;
+  --color-bg: #f5f7fa;
+  --color-card: #ffffff;
+  --color-primary: #4f46e5;
+  --color-secondary: #ec4899;
+  --color-text: #334155;
+  --color-muted: #64748b;
+  --radius: 0.75rem;
+  --transition: 0.3s ease-in-out;
+}
+
+/* 3. Global reset & body */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* 4. Navbar */
+.navbar {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.navbar .navbar-brand {
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.navbar .nav-link {
+  color: rgba(255,255,255,0.85) !important;
+  margin-left: 1rem;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #fff !important;
+}
+
+/* 5. Section title */
+.container h2 {
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--color-text);
+}
+
+/* 6. Card styling */
+.card {
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+.card-img-top {
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  object-fit: cover;
+  height: 200px;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+.card-title {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--color-primary);
+}
+.card-text {
+  flex-grow: 1;
+  color: var(--color-muted);
+}
+
+/* 7. Buttons */
+.btn-primary,
+.btn-outline-secondary {
+  font-weight: 600;
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.btn-primary {
+  background: var(--color-primary);
+  border: none;
+  color: #fff;
+}
+.btn-outline-secondary {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+.btn-primary:hover,
+.btn-outline-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* 8. Responsive spacing */
+.row.g-4 > [class*='col-'] {
+  margin-bottom: 1rem;
+}
+
+/* 9. Dark mode (optional) */
+body.dark {
+  --color-bg: #1e293b;
+  --color-card: #334155;
+  --color-text: #f8fafc;
+}
+body.dark .navbar {
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+}
+body.dark .container {
+  background: var(--color-bg);
+}
+body.dark .card {
+  background: var(--color-card);
+}
+body.dark .card-title {
+  color: var(--color-secondary);
+}
+body.dark .card-text {
+  color: #cbd5e1;
+}
+body.dark .btn-primary {
+  background: var(--color-secondary);
+}
+body.dark .btn-outline-secondary {
+  border-color: #4f46e5;
+  color: #4f46e5;
+}

@@ -1,0 +1,22 @@
+/* style.css */
+/* Ensure cards have uniform height and nice spacing */
+.card {
+    border: none;
+    border-radius: 0.5rem;
+  }
+  
+  .card-img-top {
+    object-fit: cover;
+    height: 200px;
+  }
+  
+  /* Button hover effect */
+  .btn-outline-secondary:hover {
+    background-color: #e9ecef;
+  }
+  
+  /* Section heading style */
+  h2 {
+    color: #2563eb;
+  }
+  

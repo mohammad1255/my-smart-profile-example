@@ -1,0 +1,157 @@
+/* style2.css */
+
+/* 1. استيراد خط Poppins من Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* 2. متغيرات الألوان العامة */
+:root {
+  --font-family: 'Poppins', sans-serif;
+  --color-bg: #f5f7fa;
+  --color-card: #ffffff;
+  --color-primary: #4f46e5;
+  --color-secondary: #ec4899;
+  --color-text: #334155;
+  --color-muted: #64748b;
+  --radius: 0.75rem;
+  --transition: 0.3s ease-in-out;
+}
+
+/* 3. إعدادات أساسية */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* 4. Navbar */
+.navbar {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.navbar .navbar-brand {
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.navbar .navbar-toggler-icon {
+  filter: invert(1);
+}
+.navbar .nav-link {
+  color: rgba(255,255,255,0.85) !important;
+  margin-left: 1rem;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  color: #fff !important;
+}
+
+/* 5. قسم النموذج (Card) */
+.container .card {
+  background: var(--color-card);
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+.container .card-body {
+  padding: 2rem;
+}
+.card-title {
+  font-weight: 600;
+  font-size: 1.75rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+}
+
+/* 6. تنسيق الحقول */
+.form-control,
+.form-select {
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.form-control:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(79,70,229,0.2);
+}
+fieldset legend {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+.form-check-label {
+  margin-left: 0.5rem;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+/* 7. تنسيق الأزرار */
+.btn-primary {
+  background: var(--color-primary);
+  border: none;
+  font-weight: 600;
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* 8. مسافات فائقة التنظيم */
+.container .mb-3 label {
+  font-weight: 500;
+  color: var(--color-text);
+}
+.container .mb-3,
+.container .mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+.container .d-grid {
+  margin-top: 1rem;
+}
+
+/* 9. رسائل التحقق */
+.was-validated .form-control:invalid,
+.was-validated .form-select:invalid,
+.was-validated .form-check-input:invalid {
+  border-color: #dc3545;
+}
+.was-validated .invalid-feedback {
+  display: block;
+  color: #dc3545;
+  margin-top: 0.25rem;
+}
+
+/* 10. الوضع الليلي (اختياري) */
+body.dark {
+  --color-bg: #1e293b;
+  --color-card: #334155;
+  --color-text: #f8fafc;
+}
+body.dark .navbar {
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+}
+body.dark .container .card {
+  background: var(--color-card);
+}
+body.dark .card-title {
+  color: var(--color-secondary);
+}
+body.dark .form-control:focus,
+body.dark .form-select:focus {
+  box-shadow: 0 0 0 3px rgba(236,72,153,0.2);
+}
